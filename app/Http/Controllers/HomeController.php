@@ -8,11 +8,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = [
-            'nama' => 'Budi',
-            'pekerjaan' => 'Developer',
-        ];
-        return view('home')->with($data);
+        //$data = [
+            //'nama' => 'Budi',
+            //'pekerjaan' => 'Developer',
+        //];
+        //return view('home')->with($data);
+        $nama = "teddy";
+        $pekerjaan = "programmer";
+        return view('home', compact('nama', 'pekerjaan'));
     }
     
     public function contact()
