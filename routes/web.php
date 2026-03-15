@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 //Route::get('/', function () {
@@ -30,3 +31,5 @@ Route::prefix('admin')->group(function () {
 //});
 
 Route::get('listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
+Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+
