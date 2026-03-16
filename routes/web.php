@@ -33,3 +33,6 @@ Route::prefix('admin')->group(function () {
 Route::get('listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);
 
+use App\Http\Controllers\LoginController;
+
+Route::get('/login', [LoginController::class, 'index']);
