@@ -6,6 +6,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\KaryawanController;
+
 //Route::get('/', function () {
 //return view('welcome');
 //});
@@ -18,6 +20,9 @@ Route::get('/welcome', function () {
 Route::get('/user/{id}', function ($id) {
     return 'user dengan id ' . $id;
 });
+
+// Route langsung untuk menampilkan daftar karyawan
+Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan.index');
 Route::prefix('admin')->group(function () {
     route::get('/dashboard', function () {
         return 'admin dashboard';
