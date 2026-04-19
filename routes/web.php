@@ -1,18 +1,19 @@
 <?php
 
+use App\Http\Controllers\DaftarKaryawanController;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\KaryawanController;
 
 //Route::get('/', function () {
 //return view('welcome');
 //});
 
-Route::get('/', [HomeController::class, 'index']);
+//Route::get('/', [HomeController::class, 'index']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/welcome', function () {
     return view('welcome');
@@ -39,3 +40,10 @@ Route::prefix('admin')->group(function () {
 Route::get('listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);
 Route::get('/login', [LoginController::class, 'index']);
+
+Route::get('/pegawai', [DaftarKaryawanController::class, 'tampilkan']);
+Route::view('/p5', 'P5');
+
+use App\Http\Controllers\ProductController;
+
+Route::get('/products', [ProductController::class, 'index']);

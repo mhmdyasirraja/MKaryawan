@@ -9,7 +9,7 @@ class KaryawanController extends Controller
 {
     public function index()
     {
-        $karyawans = Karyawan::all();
-        return view('list_karyawan', compact('karyawans'));
+        $karyawan = Karyawan::all();
+        return view('list_karyawan', compact('karyawan'));
     }
 }
